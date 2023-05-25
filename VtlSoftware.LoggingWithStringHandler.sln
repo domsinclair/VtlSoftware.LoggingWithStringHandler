@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33712.159
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VtlSoftware.Logging", "VtlSoftware.Logging\VtlSoftware.Logging.csproj", "{B279153A-371A-48DE-997F-9BC1A76D7016}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VtlSoftware.LoggingConsoleApp", "VtlSoftware.LoggingConsoleApp\VtlSoftware.LoggingConsoleApp.csproj", "{CC2E9765-63FF-4788-ADD4-A4F71AE0373D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "general", "general", "{742E1A1A-3DDD-470E-BF78-76CD9C969A7D}"
+	ProjectSection(SolutionItems) = preProject
+		readme.md = readme.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B279153A-371A-48DE-997F-9BC1A76D7016}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B279153A-371A-48DE-997F-9BC1A76D7016}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B279153A-371A-48DE-997F-9BC1A76D7016}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B279153A-371A-48DE-997F-9BC1A76D7016}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC2E9765-63FF-4788-ADD4-A4F71AE0373D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC2E9765-63FF-4788-ADD4-A4F71AE0373D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC2E9765-63FF-4788-ADD4-A4F71AE0373D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC2E9765-63FF-4788-ADD4-A4F71AE0373D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5ED38F2B-9D02-42C1-9E1E-42A1A42756B7}
+	EndGlobalSection
+EndGlobal
