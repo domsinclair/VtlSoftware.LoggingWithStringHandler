@@ -10,3 +10,5 @@ This takes as a staring point information gleaned from the following blog posts.
 
 [Writing a custom string interpolation handler](https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/tutorials/interpolated-string-handler)
 
+
+It looks highly likely that any class library built to use this will need to target .Net 6 and not .net Standard 2.0
