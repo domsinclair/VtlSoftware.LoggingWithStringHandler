@@ -8,7 +8,6 @@ namespace VtlSoftware.LoggingConsoleApp
     internal class Program
     {
         #region Private Methods
-
         static void BuildConfig(IConfigurationBuilder builder)
         {
             builder.SetBasePath(Directory.GetCurrentDirectory())
@@ -64,24 +63,9 @@ namespace VtlSoftware.LoggingConsoleApp
                 .UseSerilog()
                 .Build();
 
-            //var svc = Activator.CreateInstance(typeof(Calculator))
-            //    svc.Add
-
+            //  not yet perfect  calculator is being called but internal logging is not.
             var svc = ActivatorUtilities.CreateInstance<Calculator>(host.Services);
             svc.Add(1, 3);
-
-            //var serviceProvider = new ServiceCollection()
-            //    .AddSingleton<Calculator>()
-            //    .BuildServiceProvider();
-
-            //var calculator = serviceProvider.GetService<Calculator>()!;
-
-            //try
-            //{
-            //    calculator.Add(1, 1);
-            //} catch
-            //{
-            //}
 
             Log.Logger.Information("Application Closing");
             Log.CloseAndFlush();
