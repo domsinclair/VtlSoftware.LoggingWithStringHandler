@@ -8,7 +8,6 @@ namespace VtlSoftware.LoggingConsoleApp
     internal class Program
     {
         #region Private Methods
-
         static void BuildConfig(IConfigurationBuilder builder)
         {
             builder.SetBasePath(Directory.GetCurrentDirectory())
@@ -49,8 +48,6 @@ namespace VtlSoftware.LoggingConsoleApp
 
             Log.Logger = new LoggerConfiguration()
                 .ReadFrom.Configuration(builder.Build())
-                .Enrich.FromLogContext()
-                .WriteTo.Console()
                 .CreateLogger();
 
             Log.Logger.Information("Application Starting");
