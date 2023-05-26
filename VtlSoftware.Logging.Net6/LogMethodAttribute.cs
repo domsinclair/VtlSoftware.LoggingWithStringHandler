@@ -8,13 +8,15 @@ namespace VtlSoftware.Logging.Net6
     public class LogMethodAttribute : OverrideMethodAspect
     {
         #region Fields
-
         [IntroduceDependency]
         private readonly ILogger logger;
 
         #endregion
 
         #region Public Methods
+        public override void BuildAspect(IAspectBuilder<IMethod> builder)
+        { builder.Advice.Override(builder.Target, nameof(this.OverrideMethod)); }
+
         public override dynamic? OverrideMethod()
         {
             var methodName = meta.Target.Method.Name;

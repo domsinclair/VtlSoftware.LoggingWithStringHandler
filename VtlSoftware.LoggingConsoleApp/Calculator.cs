@@ -1,8 +1,11 @@
-﻿namespace VtlSoftware.LoggingConsoleApp
+﻿using VtlSoftware.Logging.Net6;
+
+namespace VtlSoftware.LoggingConsoleApp
 {
-    public class Calculator
+    public partial class Calculator
     {
         #region Public Methods
+        [LogMethod]
         public double Add(double a, double b) { return a + b; }
 
         public double Divide(double a, double b) { return a / b; }
