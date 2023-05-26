@@ -1,11 +1,40 @@
-﻿using Microsoft.Extensions.Logging;
+﻿
+///---- %name%   (%type%) ----
+///
+// file:	VtlSoftware.Logging.Net6\LoggerExtensions.t.cs
+//
+// summary:	Implements the logger extensions.t class
+///-------------------------------------------------------------------------------------------------
+
+using Microsoft.Extensions.Logging;
 using System.Runtime.CompilerServices;
 
 namespace VtlSoftware.Logging.Net6;
 
+///---- LoggerExtensions   (Class) ----
+///
+/// <summary>
+/// A logger extensions.
+/// </summary>
+///
+/// <remarks></remarks>
+///-------------------------------------------------------------------------------------------------
+
 public static partial class LoggerExtensions
 {
     #region Public Methods
+
+    ///---- LogCritical   (Method) ----
+    ///
+    /// <summary>
+    /// An ILogger extension method that logs a critical level message.
+    /// </summary>
+    ///
+    /// <remarks></remarks>
+    ///
+    /// <param name="logger">The logger to act on.</param>
+    /// <param name="handler">[in,out] The handler.</param>
+    ///-------------------------------------------------------------------------------------------------
 
     public static void LogCritical(
         this ILogger logger,
@@ -17,6 +46,19 @@ public static partial class LoggerExtensions
             logger.LogCritical(template, arguments);
         }
     }
+
+    ///---- LogCritical   (Method) ----
+    ///
+    /// <summary>
+    /// An ILogger extension method that logs a critical level message.
+    /// </summary>
+    ///
+    /// <remarks></remarks>
+    ///
+    /// <param name="logger">The logger to act on.</param>
+    /// <param name="eventId">Identifier for the event.</param>
+    /// <param name="handler">[in,out] The handler.</param>
+    ///-------------------------------------------------------------------------------------------------
 
     public static void LogCritical(
         this ILogger logger,
@@ -30,6 +72,19 @@ public static partial class LoggerExtensions
         }
     }
 
+    ///---- LogCritical   (Method) ----
+    ///
+    /// <summary>
+    /// An ILogger extension method that logs a critical level message.
+    /// </summary>
+    ///
+    /// <remarks></remarks>
+    ///
+    /// <param name="logger">The logger to act on.</param>
+    /// <param name="exception">The exception.</param>
+    /// <param name="handler">[in,out] The handler.</param>
+    ///-------------------------------------------------------------------------------------------------
+
     public static void LogCritical(
         this ILogger logger,
         Exception? exception,
@@ -41,6 +96,20 @@ public static partial class LoggerExtensions
             logger.LogCritical(exception, template, arguments);
         }
     }
+
+    ///---- LogCritical   (Method) ----
+    ///
+    /// <summary>
+    /// An ILogger extension method that logs a critical level message.
+    /// </summary>
+    ///
+    /// <remarks></remarks>
+    ///
+    /// <param name="logger">The logger to act on.</param>
+    /// <param name="eventId">Identifier for the event.</param>
+    /// <param name="exception">The exception.</param>
+    /// <param name="handler">[in,out] The handler.</param>
+    ///-------------------------------------------------------------------------------------------------
 
     public static void LogCritical(
         this ILogger logger,
@@ -55,6 +124,18 @@ public static partial class LoggerExtensions
         }
     }
 
+    ///---- LogDebug   (Method) ----
+    ///
+    /// <summary>
+    /// An ILogger extension method that logs a debug level message.
+    /// </summary>
+    ///
+    /// <remarks></remarks>
+    ///
+    /// <param name="logger">The logger to act on.</param>
+    /// <param name="handler">[in,out] The handler.</param>
+    ///-------------------------------------------------------------------------------------------------
+
     public static void LogDebug(
         this ILogger logger,
         [InterpolatedStringHandlerArgument("logger")] ref VtlLoggingDebugInterpolatedStringHandler handler)
@@ -65,6 +146,19 @@ public static partial class LoggerExtensions
             logger.LogDebug(template, arguments);
         }
     }
+
+    ///---- LogDebug   (Method) ----
+    ///
+    /// <summary>
+    /// An ILogger extension method that logs a debug level message.
+    /// </summary>
+    ///
+    /// <remarks></remarks>
+    ///
+    /// <param name="logger">The logger to act on.</param>
+    /// <param name="eventId">Identifier for the event.</param>
+    /// <param name="handler">[in,out] The handler.</param>
+    ///-------------------------------------------------------------------------------------------------
 
     public static void LogDebug(
         this ILogger logger,
@@ -78,6 +172,19 @@ public static partial class LoggerExtensions
         }
     }
 
+    ///---- LogDebug   (Method) ----
+    ///
+    /// <summary>
+    /// An ILogger extension method that logs a debug level message.
+    /// </summary>
+    ///
+    /// <remarks></remarks>
+    ///
+    /// <param name="logger">The logger to act on.</param>
+    /// <param name="exception">The exception.</param>
+    /// <param name="handler">[in,out] The handler.</param>
+    ///-------------------------------------------------------------------------------------------------
+
     public static void LogDebug(
         this ILogger logger,
         Exception? exception,
@@ -89,6 +196,20 @@ public static partial class LoggerExtensions
             logger.LogDebug(exception, template, arguments);
         }
     }
+
+    ///---- LogDebug   (Method) ----
+    ///
+    /// <summary>
+    /// An ILogger extension method that logs a debug level message.
+    /// </summary>
+    ///
+    /// <remarks></remarks>
+    ///
+    /// <param name="logger">The logger to act on.</param>
+    /// <param name="eventId">Identifier for the event.</param>
+    /// <param name="exception">The exception.</param>
+    /// <param name="handler">[in,out] The handler.</param>
+    ///-------------------------------------------------------------------------------------------------
 
     public static void LogDebug(
         this ILogger logger,
@@ -103,6 +224,18 @@ public static partial class LoggerExtensions
         }
     }
 
+    ///---- LogError   (Method) ----
+    ///
+    /// <summary>
+    /// An ILogger extension method that logs an error level message.
+    /// </summary>
+    ///
+    /// <remarks></remarks>
+    ///
+    /// <param name="logger">The logger to act on.</param>
+    /// <param name="handler">[in,out] The handler.</param>
+    ///-------------------------------------------------------------------------------------------------
+
     public static void LogError(
         this ILogger logger,
         [InterpolatedStringHandlerArgument("logger")] ref VtlLoggingErrorInterpolatedStringHandler handler)
@@ -113,6 +246,19 @@ public static partial class LoggerExtensions
             logger.LogError(template, arguments);
         }
     }
+
+    ///---- LogError   (Method) ----
+    ///
+    /// <summary>
+    /// An ILogger extension method that logs an error level message.
+    /// </summary>
+    ///
+    /// <remarks></remarks>
+    ///
+    /// <param name="logger">The logger to act on.</param>
+    /// <param name="eventId">Identifier for the event.</param>
+    /// <param name="handler">[in,out] The handler.</param>
+    ///-------------------------------------------------------------------------------------------------
 
     public static void LogError(
         this ILogger logger,
@@ -126,6 +272,19 @@ public static partial class LoggerExtensions
         }
     }
 
+    ///---- LogError   (Method) ----
+    ///
+    /// <summary>
+    /// An ILogger extension method that logs an error level message.
+    /// </summary>
+    ///
+    /// <remarks></remarks>
+    ///
+    /// <param name="logger">The logger to act on.</param>
+    /// <param name="exception">The exception.</param>
+    /// <param name="handler">[in,out] The handler.</param>
+    ///-------------------------------------------------------------------------------------------------
+
     public static void LogError(
         this ILogger logger,
         Exception? exception,
@@ -137,6 +296,20 @@ public static partial class LoggerExtensions
             logger.LogError(exception, template, arguments);
         }
     }
+
+    ///---- LogError   (Method) ----
+    ///
+    /// <summary>
+    /// An ILogger extension method that logs an error level message.
+    /// </summary>
+    ///
+    /// <remarks></remarks>
+    ///
+    /// <param name="logger">The logger to act on.</param>
+    /// <param name="eventId">Identifier for the event.</param>
+    /// <param name="exception">The exception.</param>
+    /// <param name="handler">[in,out] The handler.</param>
+    ///-------------------------------------------------------------------------------------------------
 
     public static void LogError(
         this ILogger logger,
@@ -151,6 +324,18 @@ public static partial class LoggerExtensions
         }
     }
 
+    ///---- LogInformation   (Method) ----
+    ///
+    /// <summary>
+    /// An ILogger extension method that logs an information level message.
+    /// </summary>
+    ///
+    /// <remarks></remarks>
+    ///
+    /// <param name="logger">The logger to act on.</param>
+    /// <param name="handler">[in,out] The handler.</param>
+    ///-------------------------------------------------------------------------------------------------
+
     public static void LogInformation(
         this ILogger logger,
         [InterpolatedStringHandlerArgument("logger")] ref VtlLoggingInformationInterpolatedStringHandler handler)
@@ -161,6 +346,19 @@ public static partial class LoggerExtensions
             logger.LogInformation(template, arguments);
         }
     }
+
+    ///---- LogInformation   (Method) ----
+    ///
+    /// <summary>
+    /// An ILogger extension method that logs an information level message.
+    /// </summary>
+    ///
+    /// <remarks></remarks>
+    ///
+    /// <param name="logger">The logger to act on.</param>
+    /// <param name="eventId">Identifier for the event.</param>
+    /// <param name="handler">[in,out] The handler.</param>
+    ///-------------------------------------------------------------------------------------------------
 
     public static void LogInformation(
         this ILogger logger,
@@ -174,6 +372,19 @@ public static partial class LoggerExtensions
         }
     }
 
+    ///---- LogInformation   (Method) ----
+    ///
+    /// <summary>
+    /// An ILogger extension method that logs an information level message.
+    /// </summary>
+    ///
+    /// <remarks></remarks>
+    ///
+    /// <param name="logger">The logger to act on.</param>
+    /// <param name="exception">The exception.</param>
+    /// <param name="handler">[in,out] The handler.</param>
+    ///-------------------------------------------------------------------------------------------------
+
     public static void LogInformation(
         this ILogger logger,
         Exception? exception,
@@ -185,6 +396,20 @@ public static partial class LoggerExtensions
             logger.LogInformation(exception, template, arguments);
         }
     }
+
+    ///---- LogInformation   (Method) ----
+    ///
+    /// <summary>
+    /// An ILogger extension method that logs an information level message.
+    /// </summary>
+    ///
+    /// <remarks></remarks>
+    ///
+    /// <param name="logger">The logger to act on.</param>
+    /// <param name="eventId">Identifier for the event.</param>
+    /// <param name="exception">The exception.</param>
+    /// <param name="handler">[in,out] The handler.</param>
+    ///-------------------------------------------------------------------------------------------------
 
     public static void LogInformation(
         this ILogger logger,
@@ -199,6 +424,18 @@ public static partial class LoggerExtensions
         }
     }
 
+    ///---- LogTrace   (Method) ----
+    ///
+    /// <summary>
+    /// An ILogger extension method that logs a trace level message.
+    /// </summary>
+    ///
+    /// <remarks></remarks>
+    ///
+    /// <param name="logger">The logger to act on.</param>
+    /// <param name="handler">[in,out] The handler.</param>
+    ///-------------------------------------------------------------------------------------------------
+
     public static void LogTrace(
         this ILogger logger,
         [InterpolatedStringHandlerArgument("logger")] ref VtlLoggingTraceInterpolatedStringHandler handler)
@@ -209,6 +446,19 @@ public static partial class LoggerExtensions
             logger.LogTrace(template, arguments);
         }
     }
+
+    ///---- LogTrace   (Method) ----
+    ///
+    /// <summary>
+    /// An ILogger extension method that logs a trace level message.
+    /// </summary>
+    ///
+    /// <remarks></remarks>
+    ///
+    /// <param name="logger">The logger to act on.</param>
+    /// <param name="eventId">Identifier for the event.</param>
+    /// <param name="handler">[in,out] The handler.</param>
+    ///-------------------------------------------------------------------------------------------------
 
     public static void LogTrace(
         this ILogger logger,
@@ -222,6 +472,19 @@ public static partial class LoggerExtensions
         }
     }
 
+    ///---- LogTrace   (Method) ----
+    ///
+    /// <summary>
+    /// An ILogger extension method that logs a trace level message.
+    /// </summary>
+    ///
+    /// <remarks></remarks>
+    ///
+    /// <param name="logger">The logger to act on.</param>
+    /// <param name="exception">The exception.</param>
+    /// <param name="handler">[in,out] The handler.</param>
+    ///-------------------------------------------------------------------------------------------------
+
     public static void LogTrace(
         this ILogger logger,
         Exception? exception,
@@ -233,6 +496,20 @@ public static partial class LoggerExtensions
             logger.LogTrace(exception, template, arguments);
         }
     }
+
+    ///---- LogTrace   (Method) ----
+    ///
+    /// <summary>
+    /// An ILogger extension method that logs a trace level message.
+    /// </summary>
+    ///
+    /// <remarks></remarks>
+    ///
+    /// <param name="logger">The logger to act on.</param>
+    /// <param name="eventId">Identifier for the event.</param>
+    /// <param name="exception">The exception.</param>
+    /// <param name="handler">[in,out] The handler.</param>
+    ///-------------------------------------------------------------------------------------------------
 
     public static void LogTrace(
         this ILogger logger,
@@ -247,6 +524,18 @@ public static partial class LoggerExtensions
         }
     }
 
+    ///---- LogWarning   (Method) ----
+    ///
+    /// <summary>
+    /// An ILogger extension method that logs a warning level message.
+    /// </summary>
+    ///
+    /// <remarks></remarks>
+    ///
+    /// <param name="logger">The logger to act on.</param>
+    /// <param name="handler">[in,out] The handler.</param>
+    ///-------------------------------------------------------------------------------------------------
+
     public static void LogWarning(
         this ILogger logger,
         [InterpolatedStringHandlerArgument("logger")] ref VtlLoggingWarningInterpolatedStringHandler handler)
@@ -257,6 +546,19 @@ public static partial class LoggerExtensions
             logger.LogWarning(template, arguments);
         }
     }
+
+    ///---- LogWarning   (Method) ----
+    ///
+    /// <summary>
+    /// An ILogger extension method that logs a warning level message.
+    /// </summary>
+    ///
+    /// <remarks></remarks>
+    ///
+    /// <param name="logger">The logger to act on.</param>
+    /// <param name="eventId">Identifier for the event.</param>
+    /// <param name="handler">[in,out] The handler.</param>
+    ///-------------------------------------------------------------------------------------------------
 
     public static void LogWarning(
         this ILogger logger,
@@ -270,6 +572,19 @@ public static partial class LoggerExtensions
         }
     }
 
+    ///---- LogWarning   (Method) ----
+    ///
+    /// <summary>
+    /// An ILogger extension method that logs a warning level message.
+    /// </summary>
+    ///
+    /// <remarks></remarks>
+    ///
+    /// <param name="logger">The logger to act on.</param>
+    /// <param name="exception">The exception.</param>
+    /// <param name="handler">[in,out] The handler.</param>
+    ///-------------------------------------------------------------------------------------------------
+
     public static void LogWarning(
         this ILogger logger,
         Exception? exception,
@@ -281,6 +596,20 @@ public static partial class LoggerExtensions
             logger.LogWarning(exception, template, arguments);
         }
     }
+
+    ///---- LogWarning   (Method) ----
+    ///
+    /// <summary>
+    /// An ILogger extension method that logs a warning level message.
+    /// </summary>
+    ///
+    /// <remarks></remarks>
+    ///
+    /// <param name="logger">The logger to act on.</param>
+    /// <param name="eventId">Identifier for the event.</param>
+    /// <param name="exception">The exception.</param>
+    /// <param name="handler">[in,out] The handler.</param>
+    ///-------------------------------------------------------------------------------------------------
 
     public static void LogWarning(
         this ILogger logger,
@@ -296,4 +625,5 @@ public static partial class LoggerExtensions
     }
 
     #endregion
+
 }

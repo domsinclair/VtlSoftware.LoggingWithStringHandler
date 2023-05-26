@@ -6,7 +6,11 @@ namespace VtlSoftware.LoggingConsoleApp
     {
         #region Public Methods
         [LogMethod]
-        public double Add(double a, double b) { return a + b; }
+        public double Add(double a, double b)
+        {
+            logger.LogInformation($"I'm in the Add Method");
+            return a + b;
+        }
 
         public double Divide(double a, double b) { return a / b; }
 
