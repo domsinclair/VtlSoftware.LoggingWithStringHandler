@@ -8,6 +8,7 @@ namespace VtlSoftware.LoggingConsoleApp
     internal class Program
     {
         #region Private Methods
+
         static void BuildConfig(IConfigurationBuilder builder)
         {
             builder.SetBasePath(Directory.GetCurrentDirectory())
@@ -23,6 +24,7 @@ namespace VtlSoftware.LoggingConsoleApp
             //---------------------------------------------------------------------------
             // Use the code below to run as a basic Microsoft extensions logger 
             // logging to the console.  You will get text output that is perfectly readable.
+            // Remember to comment out the serilog code.
             // ---------------------------------------------------------------------------
 
             //var serviceProvider = new ServiceCollection()
@@ -46,7 +48,6 @@ namespace VtlSoftware.LoggingConsoleApp
             BuildConfig(builder);
 
             Log.Logger = new LoggerConfiguration()
-                .MinimumLevel.Debug()
                 .ReadFrom.Configuration(builder.Build())
                 .Enrich.FromLogContext()
                 .WriteTo.Console()

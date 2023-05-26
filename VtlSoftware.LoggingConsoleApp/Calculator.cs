@@ -8,6 +8,9 @@ namespace VtlSoftware.LoggingConsoleApp
         [LogMethod]
         public double Add(double a, double b)
         {
+            //If you uncomment the line below you'll see that you can add additional log statements
+            // on top of that provided by the log aspect.
+
             logger.LogInformation($"I'm in the Add Method");
             return a + b;
         }
