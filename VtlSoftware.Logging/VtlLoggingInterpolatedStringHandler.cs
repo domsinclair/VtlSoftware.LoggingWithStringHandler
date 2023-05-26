@@ -1,6 +1,6 @@
 ﻿namespace VtlSoftware.Logging
 {
-    [InterpolatedStringHandler]
+    // [InterpolatedStringHandler]  This simply won't work in a .net standard based library.
     public ref struct VtlLoggingInterpolatedStringHandler
     {
     }

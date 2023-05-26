@@ -35,11 +35,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Handlers.tt</DependentUpon>
     </Compile>
-    <Compile Update="LoggerExtensions.t.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>LoggerExtensions.tt</DependentUpon>
-    </Compile>
   </ItemGroup>
 
 </Project>
