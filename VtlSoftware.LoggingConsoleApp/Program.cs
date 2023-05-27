@@ -64,6 +64,8 @@ namespace VtlSoftware.LoggingConsoleApp
             //  not yet perfect  calculator is being called but internal logging is not.
             var svc = ActivatorUtilities.CreateInstance<Calculator>(host.Services);
             svc.Add(1, 3);
+            svc.Divide(5, 0);
+            svc.DivideInt(5, 0);
 
             Log.Logger.Information("Application Closing");
             Log.CloseAndFlush();
