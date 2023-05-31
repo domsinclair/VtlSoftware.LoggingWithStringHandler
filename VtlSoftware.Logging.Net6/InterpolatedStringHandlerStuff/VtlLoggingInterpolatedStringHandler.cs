@@ -1,10 +1,9 @@
-﻿
-///---- %name%   (%type%) ----
-///
-// file:	VtlSoftware.Logging.Net6\VtlLoggingInterpolatedStringHandler.cs
-//
-// summary:	Implements the vtl logging interpolated string handler class
-///-------------------------------------------------------------------------------------------------
+﻿// <copyright file="VtlLoggingInterpolatedStringHandler.cs" company="View To Learn / Vtl Software Ltd">
+// Copyright (c) 2023 View To Learn / Vtl Software Ltd. All rights reserved.
+// </copyright>
+// <author> Dom Sinclair </author>
+// <date>30 May 2023</date>
+// <summary>Implements the vtl logging interpolated string handler class</summary>
 
 using Microsoft.Extensions.Logging;
 using System.Runtime.CompilerServices;
@@ -12,30 +11,26 @@ using System.Text;
 
 namespace VtlSoftware.Logging.Net6
 {
-    ///---- VtlLoggingInterpolatedStringHandler   (Struct) ----
-    ///
     /// <summary>
     /// A vtl logging interpolated string handler.
     /// </summary>
     ///
     /// <remarks></remarks>
-    ///-------------------------------------------------------------------------------------------------
 
     [InterpolatedStringHandler]
-    public ref struct VtlLoggingInterpolatedStringHandler
+    public readonly ref struct VtlLoggingInterpolatedStringHandler
     {
         /// <summary>
         /// (Immutable) The template.
         /// </summary>
         private readonly StringBuilder template = null!;
+
         /// <summary>
         /// (Immutable) The arguments.
         /// </summary>
         private readonly ArgumentList arguments = null!;
 
         #region Constructors
-        ///---- VtlLoggingInterpolatedStringHandler   (Constructor) ----
-        ///
         /// <summary>
         /// Constructor.
         /// </summary>
@@ -47,7 +42,6 @@ namespace VtlSoftware.Logging.Net6
         /// <param name="logger">The logger.</param>
         /// <param name="logLevel">The log level.</param>
         /// <param name="isEnabled">[out] True if this object is enabled, false if not.</param>
-        ///-------------------------------------------------------------------------------------------------
 
         public VtlLoggingInterpolatedStringHandler(
             int literalLength,
@@ -67,16 +61,15 @@ namespace VtlSoftware.Logging.Net6
         #endregion
 
         #region Public Methods
-        ///---- AppendFormatted<T>   (Method) ----
+        /// <summary>
+        /// Appends a formatted.
+        /// </summary>
         ///
-        /// <summary>   Appends a formatted. </summary>
+        /// <remarks></remarks>
         ///
-        /// <remarks>    </remarks>
-        ///
-        /// <typeparam name="T">    Generic type parameter. </typeparam>
-        /// <param name="value">    The value. </param>
-        /// <param name="name">     (Optional) The name. </param>
-        ///-------------------------------------------------------------------------------------------------
+        /// <typeparam name="T">Generic type parameter.</typeparam>
+        /// <param name="value">The value.</param>
+        /// <param name="name">(Optional) The name.</param>
 
         public void AppendFormatted<T>(T value, [CallerArgumentExpression("value")] string name = "")
         {
@@ -87,8 +80,6 @@ namespace VtlSoftware.Logging.Net6
             template.Append($"{{@{name}}}");
         }
 
-        ///---- AppendLiteral   (Method) ----
-        ///
         /// <summary>
         /// Appends a literal.
         /// </summary>
@@ -96,7 +87,6 @@ namespace VtlSoftware.Logging.Net6
         /// <remarks></remarks>
         ///
         /// <param name="s">The string.</param>
-        ///-------------------------------------------------------------------------------------------------
 
         public void AppendLiteral(string s)
         {
@@ -106,8 +96,6 @@ namespace VtlSoftware.Logging.Net6
             template.Append(s.Replace("{", "{{", StringComparison.Ordinal).Replace("}", "}}", StringComparison.Ordinal));
         }
 
-        ///---- GetTemplateAndArguments   (Method) ----
-        ///
         /// <summary>
         /// Gets template and arguments.
         /// </summary>
@@ -115,38 +103,32 @@ namespace VtlSoftware.Logging.Net6
         /// <remarks></remarks>
         ///
         /// <returns>The template and arguments.</returns>
-        ///-------------------------------------------------------------------------------------------------
 
         public (string, object?[]) GetTemplateAndArguments() => (template.ToString(), arguments.Arguments);
 
         #endregion
 
         #region Public Properties
-        ///---- IsEnabled   (Property) ----
-        ///
         /// <summary>
         /// Gets a value indicating whether this object is enabled.
         /// </summary>
         ///
         /// <value>True if this object is enabled, false if not.</value>
-        ///-------------------------------------------------------------------------------------------------
 
         public bool IsEnabled { get; }
 
         #endregion
 
-        ///---- ArgumentList   (Class) ----
-        ///
         /// <summary>
         /// List of arguments.
         /// </summary>
         ///
         /// <remarks></remarks>
-        ///-------------------------------------------------------------------------------------------------
 
         private class ArgumentList
         {
             #region Fields
+
             /// <summary>
             /// Zero-based index of the.
             /// </summary>
@@ -155,8 +137,6 @@ namespace VtlSoftware.Logging.Net6
             #endregion
 
             #region Constructors
-            ///---- ArgumentList   (Constructor) ----
-            ///
             /// <summary>
             /// Constructor.
             /// </summary>
@@ -164,15 +144,12 @@ namespace VtlSoftware.Logging.Net6
             /// <remarks></remarks>
             ///
             /// <param name="formattedCount">Number of formatted.</param>
-            ///-------------------------------------------------------------------------------------------------
 
             public ArgumentList(int formattedCount) => Arguments = new object?[formattedCount];
 
             #endregion
 
             #region Public Methods
-            ///---- Add   (Method) ----
-            ///
             /// <summary>
             /// Adds value.
             /// </summary>
@@ -180,21 +157,17 @@ namespace VtlSoftware.Logging.Net6
             /// <remarks></remarks>
             ///
             /// <param name="value">The value to add.</param>
-            ///-------------------------------------------------------------------------------------------------
 
             public void Add(object? value) => Arguments[_index++] = value;
 
             #endregion
 
             #region Public Properties
-            ///---- Arguments   (Property) ----
-            ///
             /// <summary>
             /// Gets the arguments.
             /// </summary>
             ///
             /// <value>The arguments.</value>
-            ///-------------------------------------------------------------------------------------------------
 
             public object?[] Arguments { get; }
 

@@ -1,0 +1,199 @@
+<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".t.cs" #>
+<#
+string[] logLevels = { "Trace", "Debug", "Information", "Warning", "Error", "Critical" };
+#>
+using System.Runtime.CompilerServices;
+namespace VtlSoftware.Logging.Net6;
+
+/// <summary>   A collection of logger extension methods. </summary>
+///
+/// <remarks>    </remarks>
+
+public static  class LoggerExtensions
+{
+
+    /// <summary>   An ILogger extension method that logs. </summary>
+    ///
+    /// <remarks>    </remarks>
+    ///
+    /// <param name="logger">   The logger to act on. </param>
+    /// <param name="logLevel"> The log level. </param>
+    /// <param name="handler">  [in,out] The handler. </param>
+
+    public static void Log(
+        this ILogger logger,
+        LogLevel logLevel,
+        [InterpolatedStringHandlerArgument("logger", "logLevel")] ref VtlLoggingInterpolatedStringHandler handler)
+    {
+        if(handler.IsEnabled)
+        {
+            var (template, arguments) = handler.GetTemplateAndArguments();
+            logger.Log(logLevel, template, arguments);
+        }
+    }
+
+
+    <# foreach (var logLevel in logLevels) { 
+
+    if (logLevel.Contains( "Information") || logLevel.Contains ("Error"))
+    {#>
+
+    /// <summary>   An ILogger extension method that logs an <#= logLevel #> level message. </summary> 
+    ///
+    /// <remarks>    </remarks>
+    ///
+    /// <param name="logger">   The logger to act on. </param>
+    /// <param name="handler">  [in,out] The handler. </param>
+
+    public static void Log<#= logLevel #>(this ILogger logger, [InterpolatedStringHandlerArgument("logger")] ref VtlLogging<#= logLevel #>InterpolatedStringHandler handler)
+    {
+        if (handler.IsEnabled)
+        {
+            var (template, arguments) = handler.GetTemplateAndArguments();
+            logger.Log<#= logLevel #>(template, arguments);
+        }
+    }
+
+
+    /// <summary>   An ILogger extension method that logs an <#= logLevel #> level message. </summary>
+    ///
+    /// <remarks>    </remarks>
+    ///
+    /// <param name="logger">   The logger to act on. </param>
+    /// <param name="eventId">  Identifier for the event. </param>
+    /// <param name="handler">  [in,out] The handler. </param>
+
+    public static void Log<#= logLevel #>(this ILogger logger, EventId eventId, [InterpolatedStringHandlerArgument("logger")] ref VtlLogging<#= logLevel #>InterpolatedStringHandler handler)
+    {
+        if (handler.IsEnabled)
+        {
+            var (template, arguments) = handler.GetTemplateAndArguments();
+            logger.Log<#= logLevel #>(eventId, template, arguments);
+        }
+    }
+
+
+    /// <summary>   An ILogger extension method that logs an <#= logLevel #> level message. </summary>
+    ///
+    /// <remarks>    </remarks>
+    ///
+    /// <param name="logger">       The logger to act on. </param>
+    /// <param name="exception">    The exception. </param>
+    /// <param name="handler">      [in,out] The handler. </param>
+
+    public static void Log<#= logLevel #>(this ILogger logger, Exception? exception, [InterpolatedStringHandlerArgument("logger")] ref VtlLogging<#= logLevel #>InterpolatedStringHandler handler)
+    {
+        if (handler.IsEnabled)
+        {
+            var (template, arguments) = handler.GetTemplateAndArguments();
+            logger.Log<#= logLevel #>(exception, template, arguments);
+        }
+    }
+
+
+    /// <summary>   An ILogger extension method that logs an <#= logLevel #> level message. </summary>
+    ///
+    /// <remarks>    </remarks>
+    ///
+    /// <param name="logger">       The logger to act on. </param>
+    /// <param name="eventId">      Identifier for the event. </param>
+    /// <param name="exception">    The exception. </param>
+    /// <param name="handler">      [in,out] The handler. </param>
+
+    public static void Log<#= logLevel #>(this ILogger logger, EventId eventId, Exception? exception, [InterpolatedStringHandlerArgument("logger")] ref VtlLogging<#= logLevel #>InterpolatedStringHandler handler)
+    {
+        if (handler.IsEnabled)
+        {
+            var (template, arguments) = handler.GetTemplateAndArguments();
+            logger.Log<#= logLevel #>(eventId, exception, template, arguments);
+        }
+    }<#
+
+    } 
+    else {
+    #>
+
+
+    /// <summary>   An ILogger extension method that logs a <#= logLevel #> level message. </summary> 
+    ///
+    /// <remarks>    </remarks>
+    ///
+    /// <param name="logger">   The logger to act on. </param>
+    /// <param name="handler">  [in,out] The handler. </param>
+
+    public static void Log<#= logLevel #>(this ILogger logger, [InterpolatedStringHandlerArgument("logger")] ref VtlLogging<#= logLevel #>InterpolatedStringHandler handler)
+    {
+        if (handler.IsEnabled)
+        {
+            var (template, arguments) = handler.GetTemplateAndArguments();
+            logger.Log<#= logLevel #>(template, arguments);
+        }
+    }
+
+
+    /// <summary>   An ILogger extension method that logs a <#= logLevel #> level message. </summary>
+    ///
+    /// <remarks>    </remarks>
+    ///
+    /// <param name="logger">   The logger to act on. </param>
+    /// <param name="eventId">  Identifier for the event. </param>
+    /// <param name="handler">  [in,out] The handler. </param>
+
+    public static void Log<#= logLevel #>(this ILogger logger, EventId eventId, [InterpolatedStringHandlerArgument("logger")] ref VtlLogging<#= logLevel #>InterpolatedStringHandler handler)
+    {
+        if (handler.IsEnabled)
+        {
+            var (template, arguments) = handler.GetTemplateAndArguments();
+            logger.Log<#= logLevel #>(eventId, template, arguments);
+        }
+    }
+
+
+    /// <summary>   An ILogger extension method that logs a <#= logLevel #> level message. </summary>
+    ///
+    /// <remarks>    </remarks>
+    ///
+    /// <param name="logger">       The logger to act on. </param>
+    /// <param name="exception">    The exception. </param>
+    /// <param name="handler">      [in,out] The handler. </param>
+
+    public static void Log<#= logLevel #>(this ILogger logger, Exception? exception, [InterpolatedStringHandlerArgument("logger")] ref VtlLogging<#= logLevel #>InterpolatedStringHandler handler)
+    {
+        if (handler.IsEnabled)
+        {
+            var (template, arguments) = handler.GetTemplateAndArguments();
+            logger.Log<#= logLevel #>(exception, template, arguments);
+        }
+    }
+
+
+    /// <summary>   An ILogger extension method that logs a <#= logLevel #> level message. </summary>
+    ///
+    /// <remarks>    </remarks>
+    ///
+    /// <param name="logger">       The logger to act on. </param>
+    /// <param name="eventId">      Identifier for the event. </param>
+    /// <param name="exception">    The exception. </param>
+    /// <param name="handler">      [in,out] The handler. </param>
+
+    public static void Log<#= logLevel #>(this ILogger logger, EventId eventId, Exception? exception, [InterpolatedStringHandlerArgument("logger")] ref VtlLogging<#= logLevel #>InterpolatedStringHandler handler)
+    {
+        if (handler.IsEnabled)
+        {
+            var (template, arguments) = handler.GetTemplateAndArguments();
+            logger.Log<#= logLevel #>(eventId, exception, template, arguments);
+        }
+    }
+
+
+
+    <#
+    } 
+     
+     } #>
+}

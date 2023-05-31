@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33712.159
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VtlSoftware.Logging", "VtlSoftware.Logging\VtlSoftware.Logging.csproj", "{B279153A-371A-48DE-997F-9BC1A76D7016}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VtlSoftware.LoggingConsoleApp", "VtlSoftware.LoggingConsoleApp\VtlSoftware.LoggingConsoleApp.csproj", "{CC2E9765-63FF-4788-ADD4-A4F71AE0373D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "general", "general", "{742E1A1A-3DDD-470E-BF78-76CD9C969A7D}"
@@ -14,7 +12,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "general", "general", "{742E
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProofOfConceptApp", "ProofOfConceptApp\ProofOfConceptApp.csproj", "{A559D358-1B0D-42E4-89D5-52EC7A795CDF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VtlSoftware.Logging.Net6", "VtlSoftware.Logging.Net6\VtlSoftware.Logging.Net6.csproj", "{449FBA37-2BB2-4115-9455-9C290644436C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VtlSoftware.Logging.Net6", "VtlSoftware.Logging.Net6\VtlSoftware.Logging.Net6.csproj", "{449FBA37-2BB2-4115-9455-9C290644436C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,10 +20,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B279153A-371A-48DE-997F-9BC1A76D7016}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B279153A-371A-48DE-997F-9BC1A76D7016}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B279153A-371A-48DE-997F-9BC1A76D7016}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B279153A-371A-48DE-997F-9BC1A76D7016}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CC2E9765-63FF-4788-ADD4-A4F71AE0373D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CC2E9765-63FF-4788-ADD4-A4F71AE0373D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CC2E9765-63FF-4788-ADD4-A4F71AE0373D}.Release|Any CPU.ActiveCfg = Release|Any CPU

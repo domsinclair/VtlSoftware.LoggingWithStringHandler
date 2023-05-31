@@ -23,6 +23,9 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>LoggerExtensions.t.cs</LastGenOutput>
     </None>
+    <None Update="Logger.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
@@ -34,11 +37,6 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Handlers.tt</DependentUpon>
-    </Compile>
-    <Compile Update="InterpolatedStringHandlerStuff\LoggerExtensions.t.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>LoggerExtensions.tt</DependentUpon>
     </Compile>
   </ItemGroup>
 
